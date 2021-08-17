@@ -1,0 +1,238 @@
+ * {
+     box-sizing: border-box;
+     margin: 0;
+ }
+
+ body {
+     font-family: "Merriweather Sans", sans-serif;
+     color: #4c6698;
+ }
+
+ body.off{
+    background-color: Black;
+    color: white;
+}
+body.off div {
+    background-color: black;
+    color: -3;
+    border-color: white;
+}
+
+body.off .board-tile{
+    /* background-color: rgba(128, 128, 128, 0.673);
+     */
+     border-color: white;
+}
+body.off .restart:hover{
+    background-color: white;
+    color: black;
+}
+
+ header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4.8rem;
+    position: relative;
+    /* background-image: radial-gradient(rgb(92, 92, 228), rgb(51, 156, 179)); */
+    height: 101px;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%), 0 0 2px rgb(0 0 0 / 7%);
+    z-index: 10;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 0 12px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+    
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+
+ .title {
+     max-width: 500px;
+ }
+
+ .wrapper {
+     height: 800px;
+     max-width: 1440px;
+     margin: 0 auto;
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+     padding: 40px;
+ }
+
+ .restart {
+     width: 175px;
+     height: 50px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border-radius: 50px;
+     border: 2px solid #4c6986;
+     transition: all 0.2s ease;
+     cursor: pointer;
+     font-weight: bold;
+     margin-top: 32px;
+ }
+
+ h1 {
+     font-size: 70px;
+     font-weight: bold;
+ }
+
+ .restart:hover {
+     color: white;
+     background-color: #4c6986;
+ }
+
+ .game {
+     width: 500px;
+     height: 500px;
+     display: flex;
+     flex-direction: column;
+ }
+
+
+ .header {
+     display: flex;
+     color: #9a9a9a;
+     font-size: 24px;
+ }
+
+ .header .player-X {
+     flex: 1;
+     border-bottom: 5px solid grey;
+     padding-bottom: 8px;
+ }
+
+ .player-X.active {
+     color: #42bed7;
+     border-color: rgb(66, 59, 201);
+     color: rgb(66, 59, 201);
+ }
+
+ .header .player-O {
+     flex: 1;
+     border-bottom: 5px solid grey;
+     padding-bottom: 8px;
+ }
+
+ .player-O.active {
+    font-size: 30px;
+        border-color: hotpink;
+        color: hotpink;
+ }
+
+ .board {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     grid-template-rows: repeat(3, 1fr);
+     grid-gap: 0;
+     flex-grow: 1;
+     padding: 10px;
+ }
+
+ .board-tile {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 80px;
+     cursor: pointer;
+ }
+
+ .board-tile:hover {
+     background-color: #eee;
+ }
+
+
+ .board-tile:not(:nth-child(3n)) {
+     border-right: 3px solid rgba(137, 163, 189, 0.6);
+ }
+
+ .board-tile:not(:nth-last-child(-n+3)) {
+     border-bottom: 3px solid rgba(137, 163, 189, 0.6);
+ }
+
+ .board-tile.won {
+    background-color: rgba(7, 242, 132, 0.673);
+    opacity: 0.7;
+}
+
+ .tile-x {
+     color: #42bed7;
+ }
+
+ .tile-o {
+     color: #d7baf8;
+ }
+
+ .tile-winner span {
+     color: #23ce6b;
+ }
+
+ @media only screen and (max-width: 1200px){
+     .wrapper{
+         flex-direction: column;
+     }
+
+     .left-section{
+         margin-bottom: 150px;
+     }
+ }
